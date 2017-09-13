@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue城市联动</title>
+</head>
+<body>
+    <div id="app">
+        <select name="" id="" v-model="currentProvince">
+            <!--
+                v-bind:value="i"相当于给currentProvince赋值
+                v-for后面的(p, i) in province
+                province表示数组
+                p表示数组元素，该元素是一个对象
+                i表示数组索引，province有3个元素，i的值就从0~2
+            -->
+            <option value="" v-for="(p, i) in province" :value="i">{{p.name}}</option>
+        </select>
+        <select name="" id="" v-model="currentCity">
+            <option value="" v-for="(c, i) in province[currentProvince].citys" v-bind:value="i">{{c.name}}</option>
+        </select>
+        <select name="" id="">
+            <option value="" v-for="d in province[currentProvince].citys[currentCity].distruct">{{d}}</option>
+        </select>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                currentProvince:0,
+                currentCity:0,
+                province:[{
+                    name:"河南省",
+                    citys:[{
+                        name:"郑州市",
+                        distruct:["金水区","经开区","二七区","管城区"]
+                    },{
+                        name:"开封市",
+                        distruct:["金明区","龙亭区","鼓楼区","顺河回族区"]
+                    },{
+                        name:"洛阳市",
+                        distruct:["老城区","西工区","涧西区","吉利区"]
+                    }]
+                },
+                {
+                    name:"河北省",
+                    citys:[{
+                        name:"石家庄市",
+                        distruct:["长安区","桥东区","桥西区","新华区"]
+                    },{
+                        name:"邢台市",
+                        distruct:["沙河区","桥西区","桥东区","刑台县"]
+                    },{
+                        name:"邯郸市",
+                        distruct:["邯山区","从台区","复兴区","从峰区"]
+                    }]
+                },
+                {
+                    name:"山西省",
+                    citys:[{
+                        name:"太原市",
+                        distruct:["尖草坪区","小店区","迎泽区","杏花岭区"]
+                    },{
+                        name:"晋中市",
+                        distruct:["榆次区","介休区","灵石县","左权县"]
+                    },{
+                        name:"运城市",
+                        distruct:["盐湖区","河津市","万荣县","永济市"]
+                    }]
+                }]
+            },
+            // methods:{
+            //     func1:function(){
+            //         console.log(this.currentProvince)
+            //     }
+            // }
+        })
+    </script>
+</body>
+</html>
