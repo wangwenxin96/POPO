@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订单提交</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <h3>订单提交</h3>
+        </div>
+        <div class="main">
+            <div class="order-sub">
+                <form action="/user" method="POST">
+                <ul>
+                    <li>
+                        <input type="text" name="name" id="txtName" placeholder="请输入您的姓名">
+                    </li>
+                    <li>
+                        <input type="text" name="moblie" id="txtMoblie" placeholder="请输入您的手机号">
+                    </li>
+                    <li>
+                        <input type="text" name="address" id="txtAddress" placeholder="请输入您的详细地址">
+                    </li>
+                    <li>
+                        <textarea name="remarks" id="txtRemarks" rows="10" cols="40" placeholder="请输入备注(有什么要求尽管说，做得到算我们输...)"></textarea>
+                    </li>
+                    <li>
+                        <input type="submit" value="确认订单" class="btn" id="btnSub">
+                    </li>
+                </ul>
+                </form>
+            </div>
+            <a href="javascript:void(0)" class="order-detail">订单总价<em id="orderPrice">&nbsp;元&nbsp;</em>&nbsp;(点击打开详情)</a>
+            <div class="order-produce">
+                <!--存放图片-->
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.cookie.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>

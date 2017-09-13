@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品列表页</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <h3>厦门小吃</h3>
+        </div>
+        <div class="main">
+            <div class="left">
+                <ul>
+                    <li class="cur">
+                        <a href="javascript:void(0)" data-type="炒菜">炒菜</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-type="套餐">套餐</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-type="面食">面食</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-type="其他">其他</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul id="pList">
+                    <!--填充js代码-->
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <span class="btm-pnum">合计<em id="sumPCouent">0&nbsp;</em>件商品</span>
+            <span class="btm-price">总价<em id="sumPPrice">0&nbsp;</em>元</span>
+            <a href="javascript:void(0)" class="btn-sure-order">确认订单</a>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/jquery.cookie.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
